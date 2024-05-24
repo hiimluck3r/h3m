@@ -137,7 +137,7 @@ This is just TL;DR explanation on how to install the project. For more informati
     ```
  ## Usage
 
-Usually cluster bootstraps around 10 minutes. You can get talosconfig and kubeconfig in "configs/" directory at the root of the project.
+Usually the cluster takes about 10 minutes to load. You can get talosconfig and kubeconfig in the "configs/" directory in the root of the project.
 
  ## Roadmap
 

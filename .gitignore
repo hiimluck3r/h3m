@@ -1,0 +1,9 @@
+terraform.tfvars
+_out/
+*.tfstate
+*.tfstate.backup
+secrets.yaml
+.terraform.*
+configs/kubeconfig
+configs/talosconfig
+.terraform/

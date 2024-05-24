@@ -1,0 +1,48 @@
+proxmox_user = "root@pam"
+proxmox_password = "12345678"
+proxmox_endpoint = "https://your_proxmox_endpoint:8006/"
+
+github_owner = "YOURNAME"
+github_pat = "github_pat_token"
+github_repository = {
+  name = "h3m-flux"
+  description = "Homelab built with Talos on Proxmox and managed with Flux"
+  visibility = "private"
+}
+
+cluster_autostart = true
+cluster_endpoint = "192.168.0.10" #use the same value in patches/vip.yaml
+cluster_name = "talos-proxmox-cluster"
+
+node_name = "pve"
+default_bridge = "vmbr0"
+cidr = "192.168.0.20/29" #may be used in initialization of the vm instead of dhcp
+gateway = "192.168.0.1" #may be used in initialization of the vm instead of dhcp
+
+image_storage = "local"
+image_type = "iso" #please use images with qemu, otherwise you'll have to manually cleanup this badness and collect ip addresses
+talos_image_url = "https://factory.talos.dev/image/ce4c980550dd2ab1b17bbf2b08801c7eb59418eafe8f279833297925d67c7515/v1.7.0/nocloud-amd64.iso"
+talos_flavor = "factory.talos.dev/installer/ce4c980550dd2ab1b17bbf2b08801c7eb59418eafe8f279833297925d67c7515:v1.7.0"
+
+disk_config = {
+  datastore_id = "local-zfs"
+  interface = "scsi0"
+  iothread = false
+  discard = "on"
+}
+
+master_config = {
+  count = 3
+  cpus = 2
+  sockets = 1
+  memory = 4096
+  disk_size = 20
+}
+
+worker_config = {
+  count = 2
+  cpus = 2
+  sockets = 1
+  memory = 4096
+  disk_size = 20
+}

@@ -34,7 +34,7 @@ In order to be as efficient (and fancy) as possible, I decided to switch from k3
 
  ## Getting Started
 
-This is just TL;DR explanation on how to install the project. For more information visit [docs](https://github.com/hiimluck3r/h3m/tree/main/docs).
+This is just TL;DR explanation on how to install the project. For more information visit [docs](docs/).
 
  ### Prerequisites
 1. Install OpenTofu (recommended) or Terraform.
@@ -64,7 +64,7 @@ This is just TL;DR explanation on how to install the project. For more informati
 
 1. Get a GitHub PAT. You can find a guide [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic).
 
-2. Create terraform.tfvars:
+2. Create [terraform.tfvars](./terraform.tfvars.example):
    ```bash
    cp terraform.tfvars.example terraform.tfvars
    ```

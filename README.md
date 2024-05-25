@@ -9,7 +9,7 @@
 It's like h2m, but better
 <br/>
 <br/>
-<a href="https://github.com/hiimluck3r/h3m/tree/main/docs"><strong>Explore the docs »</strong></a>
+<a href="docs/"><strong>Explore the docs »</strong></a>
 </p>
 </div>
 

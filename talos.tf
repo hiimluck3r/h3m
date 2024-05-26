@@ -17,8 +17,10 @@ data "talos_machine_configuration" "these_workers" {
   config_patches = [
     file("${path.root}/patches/kubelet-certificate.yaml"),
     file("${path.root}/patches/interface-names.yaml"),
-    file("${path.root}/patches/cilium-cni.yaml"),
-    yamlencode({
+    templatefile("${path.root}/patches/cilium-cni.yaml", {
+      cilium_yaml=data.helm_template.cilium_template.manifest
+    }),
+    yamlencode({ #change to templatefile
       machine = {
         install = {
           image = var.talos_flavor
@@ -46,8 +48,10 @@ data "talos_machine_configuration" "these_masters" {
     file("${path.root}/patches/vip.yaml"),
     file("${path.root}/patches/kubelet-certificate.yaml"),
     file("${path.root}/patches/interface-names.yaml"),
-    file("${path.root}/patches/cilium-cni.yaml"),
-    yamlencode({
+    templatefile("${path.root}/patches/cilium-cni.yaml", {
+      cilium_yaml=data.helm_template.cilium_template.manifest
+    }),
+    yamlencode({ #change to templatefile
       machine = {
         install = {
           image = var.talos_flavor

@@ -17,7 +17,7 @@ data "talos_machine_configuration" "these_workers" {
   config_patches = [
     file("${path.root}/patches/kubelet-certificate.yaml"),
     file("${path.root}/patches/interface-names.yaml"),
-    file("${path.root}/patches/ipvs-strict-arp.yaml"),
+    file("${path.root}/patches/cilium-cni.yaml"),
     yamlencode({
       machine = {
         install = {
@@ -46,7 +46,7 @@ data "talos_machine_configuration" "these_masters" {
     file("${path.root}/patches/vip.yaml"),
     file("${path.root}/patches/kubelet-certificate.yaml"),
     file("${path.root}/patches/interface-names.yaml"),
-    file("${path.root}/patches/ipvs-strict-arp.yaml"),
+    file("${path.root}/patches/cilium-cni.yaml"),
     yamlencode({
       machine = {
         install = {

@@ -1,6 +1,10 @@
+---
 cluster:
   network:
     cni:
-      name: custom
-      urls:
-        - https://raw.githubusercontent.com/hiimluck3r/h3m/dev/configs/cilium.yaml
+      name: none
+    proxy:
+      disabled: true
+  inlineManifests:
+    - name: cilium
+      contents: ${cilium_yaml}

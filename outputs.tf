@@ -9,3 +9,15 @@ resource "local_file" "kubeconfig" {
     content = data.talos_cluster_kubeconfig.this.kubeconfig_raw
     filename = "configs/kubeconfig"
 }
+
+resource "local_file" "worker_config" {
+    depends_on = [ data.talos_machine_configuration.these_workers ]
+    content = data.talos_machine_configuration.these_workers
+    filename = "configs/worker.yaml"
+}
+
+resource "local_file" "master_config" {
+    depends_on = [ data.talos_machine_configuration.these_masters ]
+    content = data.talos_machine_configuration.these_masters
+    filename = "configs/controlplane.yaml"
+}

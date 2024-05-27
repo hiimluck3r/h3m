@@ -17,16 +17,8 @@ data "talos_machine_configuration" "these_workers" {
   config_patches = [
     file("${path.root}/patches/kubelet-certificate.yaml"),
     file("${path.root}/patches/interface-names.yaml"),
-    templatefile("${path.root}/patches/cilium-cni.yaml", {
-      cilium_yaml=data.helm_template.cilium_template.manifest
-    }),
-    yamlencode({ #change to templatefile
-      machine = {
-        install = {
-          image = var.talos_flavor
-        }
-      }
-    })
+    file("${path.root}/patches/cilium-cni-patch.yaml"), #delete it if you don't want to use cilium
+    templatefile("${path.root}/patches/talos_flavor.yaml", {talos_flavor = var.talos_flavor})
   ]
 }
 
@@ -45,19 +37,11 @@ data "talos_machine_configuration" "these_masters" {
   cluster_endpoint = format("https://%s:6443", var.cluster_endpoint)
   machine_secrets = talos_machine_secrets.this.machine_secrets
   config_patches = [
-    file("${path.root}/patches/vip.yaml"),
+    templatefile("${path.root}/patches/vip.yaml", {cluster_endpoint = var.cluster_endpoint}),
     file("${path.root}/patches/kubelet-certificate.yaml"),
     file("${path.root}/patches/interface-names.yaml"),
-    templatefile("${path.root}/patches/cilium-cni.yaml", {
-      cilium_yaml=data.helm_template.cilium_template.manifest
-    }),
-    yamlencode({ #change to templatefile
-      machine = {
-        install = {
-          image = var.talos_flavor
-        }
-      }
-    })
+    file("${path.root}/patches/cilium-cni-patch.yaml"), #delete it if you don't want to use cilium
+    templatefile("${path.root}/patches/talos_flavor.yaml", {talos_flavor = var.talos_flavor})
   ]
 }
 

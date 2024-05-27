@@ -3,3 +3,5 @@ cluster:
   proxy:
     extraArgs:
       ipvs-strict-arp: true
+
+#for MetalLB installation

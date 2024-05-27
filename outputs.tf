@@ -21,3 +21,9 @@ resource "local_file" "master_config" {
     content = data.talos_machine_configuration.these_masters.machine_configuration
     filename = "configs/controlplane.yaml"
 }
+
+resource "local_file" "cilium_config" {
+    depends_on = [ data.helm_template.cilium_template ]
+    content = templatefile("${path.root}/patches/cilium-cni-template.yaml", {cilium_yaml = data.helm_template.cilium_template.manifest})
+    filename = "patches/cilium-cni-patch.yaml"
+}

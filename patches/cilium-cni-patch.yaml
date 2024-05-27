@@ -1,0 +1,3 @@
+#This is a blank file for rendering cilium-cni-template
+#do not share, may contain secrets
+#also it might be deleted: re-create it with `touch patches/cilium-cni-patch.yaml`

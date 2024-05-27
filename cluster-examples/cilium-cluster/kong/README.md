@@ -1,0 +1,2 @@
+# Why Kong?
+There is no actual reason to use Kong instead of built-in cilium Gateway Controller. Just redact cilium_config.tf at the root of the repo for your needs. The only reason I'm using Kong is my previous experience.

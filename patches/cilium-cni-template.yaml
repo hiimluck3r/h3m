@@ -3,8 +3,9 @@ cluster:
   network:
     cni:
       name: none
-    proxy:
-      disabled: true
+  proxy:
+    disabled: true
   inlineManifests:
     - name: cilium
-      contents: ${cilium_yaml}
+      contents: |
+        ${indent(8, cilium_yaml)}

@@ -1,3 +1,4 @@
+# Currently I don't know how to work with mayastor, so I'll just leave it here
 - op: add
   path: /machine/sysctls
   value:

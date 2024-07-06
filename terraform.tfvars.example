@@ -11,7 +11,7 @@ github_repository = {
 }
 
 cluster_autostart = true
-cluster_endpoint = "192.168.0.10" #use the same value in patches/vip.yaml
+cluster_endpoint = "192.168.0.10"
 cluster_name = "talos-proxmox-cluster"
 
 node_name = "pve"

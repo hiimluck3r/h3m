@@ -1,0 +1,17 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: kong
+  namespace: kong
+spec:
+  interval: 1m
+  timeout: 5m0s
+  chart:
+    spec:
+      chart: ingress
+      version: '0.12.x'
+      sourceRef:
+        kind: HelmRepository
+        name: kong-repo
+        namespace: kong
+      interval: 1m

@@ -9,7 +9,7 @@
 It's like h2m, but better
 <br/>
 <br/>
-<a href="https://github.com/hiimluck3r/h3m/tree/main/docs"><strong>Explore the docs »</strong></a>
+<a href="docs/"><strong>Explore the docs »</strong></a>
 </p>
 </div>
 
@@ -34,7 +34,7 @@ In order to be as efficient (and fancy) as possible, I decided to switch from k3
 
  ## Getting Started
 
-This is just TL;DR explanation on how to install the project. For more information visit [docs](https://github.com/hiimluck3r/h3m/tree/main/docs).
+This is just TL;DR explanation on how to install the project. For more information visit [docs](docs/).
 
  ### Prerequisites
 1. Install OpenTofu (recommended) or Terraform.
@@ -64,13 +64,12 @@ This is just TL;DR explanation on how to install the project. For more informati
 
 1. Get a GitHub PAT. You can find a guide [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic).
 
-2. Create terraform.tfvars:
+2. Create [terraform.tfvars](./terraform.tfvars.example):
    ```bash
    cp terraform.tfvars.example terraform.tfvars
    ```
 3. Enter your information into .tfvars file:
     ```ini
-    #This is an example from terraform.tfvars.example
     proxmox_user = "root@pam"
     proxmox_password = "12345678"
     proxmox_endpoint = "https://your_proxmox_endpoint:8006/"
@@ -78,13 +77,13 @@ This is just TL;DR explanation on how to install the project. For more informati
     github_owner = "YOURNAME"
     github_pat = "github_pat_token"
     github_repository = {
-      name = "h3m-flux" #make sure you don't have repo with the same name
+      name = "h3m-flux"
       description = "Homelab built with Talos on Proxmox and managed with Flux"
-      visibility = "private" #optional, but it's recommended
+      visibility = "private"
     }
 
     cluster_autostart = true
-    cluster_endpoint = "192.168.0.10" #use the same value in patches/vip.yaml
+    cluster_endpoint = "192.168.0.10"
     cluster_name = "talos-proxmox-cluster"
 
     node_name = "pve"
@@ -108,29 +107,19 @@ This is just TL;DR explanation on how to install the project. For more informati
       count = 3
       cpus = 2
       sockets = 1
-      memory = 4096 #MB
-      disk_size = 20 #GB
+      memory = 4096
+      disk_size = 20
     }
 
     worker_config = {
       count = 2
       cpus = 2
       sockets = 1
-      memory = 4096 #MB
-      disk_size = 20 #GB
+      memory = 4096
+      disk_size = 20
     }
     ```
-4. Also configure VIP patch in patches/vip.yaml if needed:
-    ```yaml
-    ---
-    machine:
-    network:
-        interfaces:
-        - interface: eth0
-            vip:
-            ip: 192.168.0.10 #<- Please configure it if you're using VIP, othervise - delete patch in talos.tf configuration for control-plane (master) node
-    ```
-5. Plan and apply:
+4. Plan and apply:
     ```bash
     tofu plan
     tofy apply
@@ -144,7 +133,6 @@ Usually the cluster takes about 10 minutes to load. You can get talosconfig and 
 * Provide understandable documentation
 * Provide more examples for cluster-examples
 * Provide an external repository with a list of app and deployments that I use
-* Cilium integration? I guess I'll try it?
 
 See the [open issues](https://github.com/hiimluck3r/h3m/issues) for a full list of proposed features (and known issues).
 

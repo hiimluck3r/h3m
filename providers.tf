@@ -16,6 +16,11 @@ terraform {
       source = "fluxcd/flux"
       version = "1.3.0"
     }
+
+    helm = {
+      source = "hashicorp/helm"
+      version = "2.13.2"
+    }
   }
 }
 
@@ -47,6 +52,12 @@ provider "flux" {
 provider "github" {
   owner = var.github_owner
   token = var.github_pat
+}
+
+provider "helm" {
+  kubernetes {
+    config_path = "${path.root}/configs/kubeconfig"
+  }
 }
 
 provider "talos" {}

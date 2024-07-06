@@ -1,0 +1,4 @@
+---
+machine:
+  install:
+    image: ${talos_flavor}

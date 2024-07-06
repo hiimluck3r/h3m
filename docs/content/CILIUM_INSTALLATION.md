@@ -3,4 +3,4 @@
 # Navigation:
 * [Home](README.md)
 * [FluxCD configuration](content/PROXMOX_CONFIGURATION.md)
-* [Cilium installation](content/CILIUM_INSTALLATION.md)
+* [MetalLB installation](content/METALLB_INSTALLATION.md)

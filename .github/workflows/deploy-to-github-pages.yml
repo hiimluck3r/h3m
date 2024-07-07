@@ -40,12 +40,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: List files for debugging
+        run: ls -l ./docs
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 16.x
           cache: yarn
-          cache-dependency-path: './docs/yarn.lock'
+          cache-dependency-path: ./docs/yarn.lock
+
+      - name: List files to verify cache
+        run: ls -l ./docs
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile --non-interactive

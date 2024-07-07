@@ -1,15 +1,41 @@
----
-title: Root
-layout: home
----
+# Website
 
-# Documentation
-Here I'll try to explain everything that might go wrong while installing h3m.
+This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
-### Navigation:
-* [Getting started](content/GETTING_STARTED.md)
-* [Proxmox configuration](content/PROXMOX_CONFIGURATION.md)
-* [Talos configuration](content/TALOS_CONFIGURATION.md)
-* [FluxCD configuration](content/FLUXCD_CONFIGURATION.md)
-* [MetalLB installation](content/METALLB_INSTALLATION.md)
-* [Cilium installation](content/CILIUM_INSTALLATION.md)
+### Installation
+
+```
+$ yarn
+```
+
+### Local Development
+
+```
+$ yarn start
+```
+
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+
+### Build
+
+```
+$ yarn build
+```
+
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+### Deployment
+
+Using SSH:
+
+```
+$ USE_SSH=true yarn deploy
+```
+
+Not using SSH:
+
+```
+$ GIT_USER=<Your GitHub username> yarn deploy
+```
+
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.

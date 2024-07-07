@@ -78,7 +78,7 @@ const config: Config = {
           items: [
             {
               label: 'Tutorial',
-              to: '/docs/1_getting_started.md',
+              to: '/docs/getting_started',
             },
           ],
         },

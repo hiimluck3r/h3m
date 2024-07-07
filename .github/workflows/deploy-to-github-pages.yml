@@ -28,6 +28,9 @@ env:
 jobs:
   # Single deploy job since we're just deploying
   deploy:
+    defaults:
+         run:
+           working-directory: ./docs/
     
     environment:
       name: github-pages
@@ -42,7 +45,7 @@ jobs:
         with:
           node-version: 16.x
           cache: yarn
-          working-directory: ./docs
+          cache-dependency-path: './docs/yarn.lock'
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile --non-interactive

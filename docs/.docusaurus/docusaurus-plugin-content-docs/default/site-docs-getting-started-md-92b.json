@@ -1,0 +1,19 @@
+{
+  "id": "getting_started",
+  "title": "Getting Started",
+  "description": "",
+  "source": "@site/docs/getting_started.md",
+  "sourceDirName": ".",
+  "slug": "/getting_started",
+  "permalink": "/h3m/docs/getting_started",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "MetalLB Installation",
+    "permalink": "/h3m/docs/Loadbalancers configuration/METALLB_INSTALLATION"
+  }
+}

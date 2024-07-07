@@ -1,0 +1,24 @@
+{
+  "id": "proxmox_configuration",
+  "title": "Proxmox Configuration",
+  "description": "",
+  "source": "@site/docs/2_proxmox_configuration.md",
+  "sourceDirName": ".",
+  "slug": "/proxmox_configuration",
+  "permalink": "/h3m/docs/proxmox_configuration",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Getting Started",
+    "permalink": "/h3m/docs/getting_started"
+  },
+  "next": {
+    "title": "Talos Configuration",
+    "permalink": "/h3m/docs/talos_configuration"
+  }
+}

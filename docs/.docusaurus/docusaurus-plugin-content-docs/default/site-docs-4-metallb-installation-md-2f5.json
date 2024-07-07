@@ -1,0 +1,24 @@
+{
+  "id": "METALLB_INSTALLATION",
+  "title": "MetalLB Installation",
+  "description": "",
+  "source": "@site/docs/4_METALLB_INSTALLATION.md",
+  "sourceDirName": ".",
+  "slug": "/METALLB_INSTALLATION",
+  "permalink": "/h3m/docs/METALLB_INSTALLATION",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Talos Configuration",
+    "permalink": "/h3m/docs/TALOS_CONFIGURATION"
+  },
+  "next": {
+    "title": "FluxCD Configuration",
+    "permalink": "/h3m/docs/FLUXCD_CONFIGURATION"
+  }
+}

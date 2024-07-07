@@ -28,7 +28,6 @@ env:
 jobs:
   # Single deploy job since we're just deploying
   deploy:
-    
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -37,11 +36,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: List files for debugging
+        run: ls -l
+
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 16.x
+          node-version: 18.x
           cache: yarn
+          cache-dependency-path: ./docs/yarn.lock
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile --non-interactive
@@ -58,7 +61,7 @@ jobs:
         uses: actions/upload-pages-artifact@v2
         with:
           # Upload the build directory from the docs folder
-          path: docs/build
+          path: ./docs/build
 
       - name: Deploy to GitHub Pages
         id: deployment

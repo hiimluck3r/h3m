@@ -1,0 +1,58 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/h3m/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/h3m/docs",
+          "mainDocId": "getting_started",
+          "docs": [
+            {
+              "id": "fluxcd_configuration",
+              "path": "/h3m/docs/fluxcd_configuration",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting_started",
+              "path": "/h3m/docs/getting_started",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Loadbalancing/cilium_installation",
+              "path": "/h3m/docs/Loadbalancing/cilium_installation",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Loadbalancing/metallb_installation",
+              "path": "/h3m/docs/Loadbalancing/metallb_installation",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "proxmox_configuration",
+              "path": "/h3m/docs/proxmox_configuration",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "talos_configuration",
+              "path": "/h3m/docs/talos_configuration",
+              "sidebar": "tutorialSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "tutorialSidebar": {
+              "link": {
+                "path": "/h3m/docs/getting_started",
+                "label": "getting_started"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

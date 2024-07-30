@@ -1,0 +1,24 @@
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: netdata-ui
+  namespace: monitoring
+  annotations:
+    konghq.com/strip-path: 'true'
+spec:
+  parentRefs:
+  - name: kong
+    namespace: kong
+  hostnames:
+  - 'monitoring.novodigital.ru'
+  rules:
+  - matches:
+    - path:
+        type: PathPrefix
+        value: /
+    backendRefs:
+    - name: netdata
+      kind: Service
+      port: 19999
+      namespace: monitoring

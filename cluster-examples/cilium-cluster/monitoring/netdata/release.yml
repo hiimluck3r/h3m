@@ -15,3 +15,16 @@ spec:
         name: netdata-repo
         namespace: monitoring
       interval: 1m
+  values:
+    ingress:
+      enabled: false
+    database:
+      persistence: true
+      storageclass: ""
+      volumesize: 4Gi
+    alarms:
+      persistence: true
+      storageclass: ""
+      volumesize: 2Gi
+    #Check more at https://artifacthub.io/packages/helm/netdata/netdata/3.1.0?modal=values
+    

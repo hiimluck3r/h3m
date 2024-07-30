@@ -11,7 +11,7 @@ spec:
   - name: kong
     namespace: kong
   hostnames:
-  - 'monitoring.novodigital.ru'
+  - 'monitoring.h3m.local'
   rules:
   - matches:
     - path:

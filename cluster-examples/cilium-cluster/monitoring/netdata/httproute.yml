@@ -4,12 +4,10 @@ kind: HTTPRoute
 metadata:
   name: netdata-ui
   namespace: monitoring
-  annotations:
-    konghq.com/strip-path: 'true'
 spec:
   parentRefs:
-  - name: kong
-    namespace: kong
+  - name: cilium
+    namespace: kube-system
   hostnames:
   - 'monitoring.h3m.local'
   rules:

@@ -1,8 +1,0 @@
-apiVersion: source.toolkit.fluxcd.io/v1
-kind: HelmRepository
-metadata:
-  name: kong-repo
-  namespace: kong
-spec:
-  interval: 1m
-  url: https://charts.konghq.com

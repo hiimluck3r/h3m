@@ -4,12 +4,10 @@ kind: HTTPRoute
 metadata:
   name: longhorn-ui
   namespace: longhorn-system
-  annotations:
-    konghq.com/strip-path: 'true'
 spec:
   parentRefs:
-  - name: kong
-    namespace: kong
+  - name: cilium
+    namespace: kube-system
   hostnames:
   - 'longhorn.h3m.local'
   rules:

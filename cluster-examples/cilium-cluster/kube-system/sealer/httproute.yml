@@ -8,7 +8,7 @@ metadata:
     konghq.com/strip-path: 'true'
 spec:
   parentRefs:
-  - name: cilium
+  - name: cilium-local
     namespace: kube-system
   hostnames:
   - 'seal.h3m.local'

@@ -4,9 +4,11 @@ kind: HTTPRoute
 metadata:
   name: netdata-ui
   namespace: monitoring
+  labels:
+    zone: local
 spec:
   parentRefs:
-  - name: cilium
+  - name: cilium-local
     namespace: kube-system
   hostnames:
   - 'monitoring.h3m.local'

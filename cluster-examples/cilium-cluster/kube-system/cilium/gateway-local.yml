@@ -2,20 +2,20 @@
 apiVersion: gateway.networking.k8s.io/v1
 kind: Gateway
 metadata:
-  name: cilium
+  name: cilium-local
   namespace: kube-system
 spec:
   gatewayClassName: cilium
   listeners:
-  - name: http-1
-    hostname: "*.novodigital.ru"
+  - name: http-1-local
+    hostname: "h3m.local"
     port: 80
     protocol: HTTP
     allowedRoutes:
       namespaces:
         from: All
-  - name: http-2
-    hostname: "novodigital.ru"
+  - name: http-2-local
+    hostname: "*.h3m.local"
     port: 80
     protocol: HTTP
     allowedRoutes:

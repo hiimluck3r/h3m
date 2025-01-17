@@ -7,7 +7,7 @@ resource "proxmox_virtual_environment_download_file" "talos_image" {
 
 resource "proxmox_virtual_environment_vm" "talos_masters" {
   depends_on = [ proxmox_virtual_environment_download_file.talos_image ]
-  node_name = "pve"
+  node_name = var.node_name
   count = var.master_config.count
   name = format("talos-master-%s", count.index)
   stop_on_destroy = true
@@ -59,7 +59,7 @@ resource "proxmox_virtual_environment_vm" "talos_masters" {
 
 resource "proxmox_virtual_environment_vm" "talos_workers" {
   depends_on = [ proxmox_virtual_environment_download_file.talos_image ]
-  node_name = "pve"
+  node_name = var.node_name
   count = var.worker_config.count
   name = format("talos-worker-%s", count.index)
   stop_on_destroy = true
